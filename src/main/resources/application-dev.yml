@@ -1,0 +1,16 @@
+## 家乡属性
+home:
+  province: 浙江
+  city: 台州临海${random.int[200,300]}
+  desc: 我家住在${home.province}的${home.city}
+##Mysql数据源
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springbootdb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: 1234
+## Mybatis 配置
+mybatis:
+  typeAliasesPackage: cn.kotori.springboot.domain
+  mapperLocations: classpath:mapper/*.xml
