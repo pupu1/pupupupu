@@ -16,7 +16,7 @@ public class HelloWorldController {
 
     @RequestMapping("/")
     public String sayHello() {
-        log.info("开始");
+        log.info("v1.0开始");
         return desc;
     }
 }
