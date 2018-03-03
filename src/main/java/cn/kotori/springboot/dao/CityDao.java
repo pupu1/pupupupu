@@ -1,7 +1,7 @@
 package cn.kotori.springboot.dao;
 
 import cn.kotori.springboot.domain.City;
-import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import java.util.List;
  *
  * Created by bysocket on 07/02/2017.
  */
+@Mapper
 public interface CityDao {
 
     /**
@@ -17,6 +18,7 @@ public interface CityDao {
      *
      * @return
      */
+    //@SelectProvider(type = CitySqlProvider.class, method = "findAllCity")
     List<City> findAllCity();
 
     /**
