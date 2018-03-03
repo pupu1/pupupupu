@@ -24,7 +24,7 @@ public interface CityService {
      * @param id
      * @return
      */
-    City findCityById(Long id);
+    City findCityById(int id);
 
     /**
      * 新增城市信息
@@ -32,7 +32,7 @@ public interface CityService {
      * @param city
      * @return
      */
-    Long saveCity(City city);
+    int saveCity(City city);
 
     /**
      * 更新城市信息
@@ -40,7 +40,7 @@ public interface CityService {
      * @param city
      * @return
      */
-    Long updateCity(City city);
+    int updateCity(City city);
 
     /**
      * 根据城市 ID,删除城市信息
@@ -48,5 +48,5 @@ public interface CityService {
      * @param id
      * @return
      */
-    Long deleteCity(Long id);
+    int deleteCity(int id);
 }

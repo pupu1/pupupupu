@@ -1,6 +1,6 @@
 package cn.kotori.springboot.service.impl;
 
-import cn.kotori.springboot.dao.CityDao;
+import cn.kotori.springboot.dao.CityMapper;
 import cn.kotori.springboot.domain.City;
 import cn.kotori.springboot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,29 +17,26 @@ import java.util.List;
 public class CityServiceImpl implements CityService {
 
     @Autowired
-    private CityDao cityDao;
+    private CityMapper cityMapper;
 
     public List<City> findAllCity(){
-        return cityDao.findAllCity();
+        return cityMapper.selectAll();
     }
 
-    public City findCityById(Long id) {
-        return cityDao.findById(id);
+    public City findCityById(int id) {
+        return cityMapper.selectByPrimaryKey(id);
     }
 
-    @Override
-    public Long saveCity(City city) {
-        return cityDao.saveCity(city);
+    public int saveCity(City city) {
+        return cityMapper.insert(city);
     }
 
-    @Override
-    public Long updateCity(City city) {
-        return cityDao.updateCity(city);
+    public int updateCity(City city) {
+        return cityMapper.updateByPrimaryKey(city);
     }
 
-    @Override
-    public Long deleteCity(Long id) {
-        return cityDao.deleteCity(id);
+    public int deleteCity(int id) {
+        return cityMapper.deleteByPrimaryKey(id);
     }
 
 }

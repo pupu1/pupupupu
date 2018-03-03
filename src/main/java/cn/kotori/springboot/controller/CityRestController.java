@@ -22,7 +22,7 @@ public class CityRestController {
     private CityService cityService;
 
     @RequestMapping(value = "/api/city/{id}", method = RequestMethod.GET)
-    public City findOneCity(@PathVariable("id") Long id) {
+    public City findOneCity(@PathVariable("id") int id) {
         return cityService.findCityById(id);
     }
 
@@ -46,7 +46,7 @@ public class CityRestController {
     }
 
     @RequestMapping(value = "/api/city/{id}", method = RequestMethod.DELETE)
-    public void modifyCity(@PathVariable("id") Long id) {
+    public void modifyCity(@PathVariable("id") int id) {
         cityService.deleteCity(id);
     }
 }
