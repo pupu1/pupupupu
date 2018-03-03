@@ -3,6 +3,9 @@ package cn.kotori.springboot.domain;
 import java.io.Serializable;
 
 public class City implements Serializable {
+
+    private static final long serialVersionUID = 7980018397773015294L;
+
     private Integer id;
 
     private Integer provinceId;
@@ -11,7 +14,6 @@ public class City implements Serializable {
 
     private String description;
 
-    private static final long serialVersionUID = 1L;
 
     public City(Integer id, Integer provinceId, String cityName, String description) {
         this.id = id;

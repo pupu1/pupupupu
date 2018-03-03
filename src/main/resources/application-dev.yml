@@ -20,6 +20,11 @@ spring:
     port: 6379
 ## Redis服务器连接密码（默认为空）
     password:
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
 ## Mybatis 配置
 mybatis:
     typeAliasesPackage: cn.kotori.springboot.domain

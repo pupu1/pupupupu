@@ -1,5 +1,6 @@
 package cn.kotori.springboot.service.impl;
 
+import cn.kotori.springboot.common.Const;
 import cn.kotori.springboot.dao.CityMapper;
 import cn.kotori.springboot.domain.City;
 import cn.kotori.springboot.service.CityService;
@@ -33,7 +34,7 @@ public class CityServiceImpl implements CityService {
 
     public City findCityById(int id) {
         // 从缓存中获取城市信息
-        String key = "city_" + id;
+        String key = Const.city.CITY_REDIS_PREFIX + id;
         ValueOperations<String, Object> operations = redisTemplate.opsForValue();
 
         // 缓存存在
